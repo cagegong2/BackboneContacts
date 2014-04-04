@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Contacts</title>
+  <link rel="stylesheet" href="css/contact.css"/>
+</head>
+
+<body>
+
+	<script src="lib/jquery.js"></script>
+  <!--<script src="lib/json2.js"></script>-->
+  <script src="lib/underscore.js"></script>
+  <script src="lib/backbone.js"></script>
+  <!--<script src="lib/backbone.localStorage.js"></script>-->
+  <script src="js/contact.js"></script>
+
+  <!-- Templates -->
+
+  <script type="text/template" id="item-template">
+    <div class="view">
+      <input class="toggle" type="checkbox" <%= done ? 'checked="checked"' : '' %> />
+      <label><%- title %></label>
+      <a class="destroy"></a>
+    </div>
+    <input class="edit" type="text" value="<%- title %>" />
+  </script>
+
+  <script type="text/template" id="stats-template">
+    <% if (done) { %>
+      <a id="clear-completed">Clear <%= done %> completed <%= done == 1 ? 'item' : 'items' %></a>
+    <% } %>
+    <div class="todo-count"><b><%= remaining %></b> <%= remaining == 1 ? 'item' : 'items' %> left</div>
+  </script>
+
+  </body>
+</html>
