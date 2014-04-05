@@ -1,4 +1,4 @@
-var Contact, contact1;
+var Contact, Workspace, app, contact1;
 
 Contact = Backbone.Model.extend({
   urlRoot: 'http://coffeescript.org/',
@@ -16,3 +16,19 @@ contact1 = new Contact({
 });
 
 console.log(contact1.url());
+
+Workspace = Backbone.Router.extend({
+  routes: {
+    "help": "help",
+    "search/:query": "search",
+    "search/:query/p:page": "search"
+  },
+  help: function() {
+    return console.log("help");
+  },
+  search: function(query, page) {
+    return console.log("search: " + query + page);
+  }
+});
+
+app = new Workspace();
