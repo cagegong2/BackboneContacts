@@ -32,3 +32,5 @@ Workspace = Backbone.Router.extend({
 });
 
 app = new Workspace();
+
+Backbone.history.start();

@@ -21,3 +21,5 @@ Workspace = Backbone.Router.extend
 		console.log "search: " + query + page
 
 app = new Workspace()
+# start router listening
+Backbone.history.start()
